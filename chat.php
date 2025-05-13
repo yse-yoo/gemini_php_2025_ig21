@@ -7,6 +7,9 @@ $result = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // TODO: POSTリクエストからプロンプトを取得
     $prompt = $_POST['prompt'] ?? '';
+    // デバッグ用
+    // var_dump($prompt);
+    
     // TODO: Geminiクラスのインスタンスを作成
     $gemini = new Gemini();
     // TODO: chat() を実行
