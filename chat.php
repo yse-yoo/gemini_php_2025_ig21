@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Geminiクラスのインスタンスを作成
     $gemini = new Gemini();
     // TODO: chat() を実行
-    $result = null;
+    $result = $gemini->chat($prompt);
 }
 ?>
 

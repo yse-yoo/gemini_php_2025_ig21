@@ -7,7 +7,7 @@ class Gemini
     // TODO: POSTリクエストのメソッドを設定
     public $options = [
         'http' => [
-            'method'  => '',
+            'method'  => 'POST',
             'header'  => "Content-Type: application/json",
             'ignore_errors' => true
         ]
@@ -46,6 +46,7 @@ class Gemini
 
         // TODO:レスポンス(JSON)を配列にデコード
         $json = json_decode($response, true);
+        // var_dump($json);
         // テキストデータを返す
         return $json['candidates'][0]['content']['parts'][0]['text'] ?? null;
     }
