@@ -70,7 +70,7 @@ class Gemini
         // TODO: Base64エンコード: base64_encode()
         $image_base64 = base64_encode($image);
         // TODO: プロンプトを設定
-        $prompt = "";
+        $prompt = "この写真は何ですか？";
 
         // リクエストデータを作成
         $data = [
