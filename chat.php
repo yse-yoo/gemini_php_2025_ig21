@@ -6,7 +6,7 @@ $result = '';
 // POSTリクエストが送信された場合
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // TODO: POSTリクエストからプロンプトを取得
-    $prompt = "";
+    $prompt = $_POST['prompt'] ?? '';
     // TODO: Geminiクラスのインスタンスを作成
     $gemini = new Gemini();
     // TODO: chat() を実行
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="bg-gray-100 p-6">
     <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow">
         <h1 class="text-2xl font-bold mb-4">Gemini API Chat</h1>
-        <form method="POST" class="space-y-4">
+        <form action="" method="POST" class="space-y-4">
             <textarea name="prompt" rows="4" class="w-full p-2 border rounded" placeholder="質問を入力してください..."><?= htmlspecialchars($_POST['prompt'] ?? '') ?></textarea>
             <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">送信</button>
         </form>
