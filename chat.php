@@ -1,5 +1,6 @@
 <?php
 require_once 'env.php';
+// service/Gemini.php を読み込む
 require_once 'service/Gemini.php';
 
 $result = '';
@@ -9,8 +10,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $prompt = $_POST['prompt'] ?? '';
     // デバッグ用
     // var_dump($prompt);
-    
-    // TODO: Geminiクラスのインスタンスを作成
+
+    // Geminiクラスのインスタンスを作成
     $gemini = new Gemini();
     // TODO: chat() を実行
     $result = null;

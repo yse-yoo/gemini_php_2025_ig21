@@ -33,7 +33,7 @@ class Gemini
         ];
 
         // TODO: リクエストヘッダーに content 設定：json形式
-        $this->options['http']['content'] = "";
+        $this->options['http']['content'] = json_encode($data);
 
         // ストリームコンテキストを作成
         $context = stream_context_create($this->options);
@@ -45,7 +45,7 @@ class Gemini
         }
 
         // TODO:レスポンス(JSON)を配列にデコード
-        $json = "";
+        $json = json_decode($response, true);
         // テキストデータを返す
         return $json['candidates'][0]['content']['parts'][0]['text'] ?? null;
     }
