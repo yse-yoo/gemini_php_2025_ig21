@@ -32,7 +32,7 @@ function uploadImage()
     }
 
     // TODO: $_FILES からアップロードファイル名を取得
-    $fileName = "";
+    $fileName = $_FILES['image']['name'];
     // 拡張子を取得
     $extension = pathinfo($fileName, PATHINFO_EXTENSION);
     // アップロードファイル名
@@ -41,7 +41,7 @@ function uploadImage()
     $uploadedImagePath = "uploads/{$fileName}";
 
     // TODO: $_FILES からアップロード画像の一時ファイルパス取得
-    $filePath = "";
+    $filePath = $_FILES['image']['tmp_name'];
     // アップロード画像を保存
     move_uploaded_file($filePath, $uploadedImagePath);
 
