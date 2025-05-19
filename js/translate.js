@@ -63,6 +63,8 @@ const translate = async (origin, fromLang, toLang) => {
         // 2. POSTメソッドを使用してデータを送信
         // 3. JSON形式でリクエストボディを作成
         // 4. Content-Typeヘッダーをapplication/jsonに設定
+
+        // TRANSLATEION_URI: api/ai_translate.php
         const response = await fetch(TRANSLATION_URI, {
             method: 'POST',
             headers: {
