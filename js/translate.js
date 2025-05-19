@@ -63,7 +63,13 @@ const translate = async (origin, fromLang, toLang) => {
         // 2. POSTメソッドを使用してデータを送信
         // 3. JSON形式でリクエストボディを作成
         // 4. Content-Typeヘッダーをapplication/jsonに設定
-        const response = {}
+        const response = await fetch(TRANSLATION_URI, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
 
         statusElement.textContent = "";
 
@@ -72,7 +78,7 @@ const translate = async (origin, fromLang, toLang) => {
         }
 
         // TODO: レスポンスをJSON形式で取得
-        const result = {};
+        const result = await response.json();
         console.log(result);
         renderTranslation(result);
 
