@@ -10,9 +10,9 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 header('Content-Type: application/json');
 
 // TODO: file_get_contents() リクエストデータ取得: php://input
-$input = "";
+$input = file_get_contents('php://input');
 // TODO: JSON形式のデータを配列にデコード
-$posts = [];
+$posts = json_decode($input, true);
 
 // origin, fromLang, toLangの値の検証
 if (!isset($posts['origin']) || !isset($posts['fromLang']) || !isset($posts['toLang'])) {
