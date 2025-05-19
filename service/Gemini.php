@@ -132,7 +132,7 @@ class Gemini
         $data = [
             'contents' => [
                 [
-                    'parts' => []
+                    'parts' => [['text' => $prompt]]
                 ]
             ]
         ];
